@@ -9,7 +9,7 @@ require "shellwords"
 module AwesomePrint
   class Formatter
 
-    CORE = [ :array, :bigdecimal, :class, :dir, :file, :hash, :method, :rational, :set, :struct, :unboundmethod ]
+    CORE = [ :array, :bigdecimal, :class, :dir, :file, :hash, :ipaddr, :method, :rational, :set, :struct, :unboundmethod ]
     DEFAULT_LIMIT_SIZE = 7
 
     def initialize(inspector)
@@ -231,6 +231,12 @@ module AwesomePrint
     #------------------------------------------------------------------------------
     def awesome_instance(o)
       "#{o.class}:0x%08x" % (o.__id__ * 2)
+    end
+
+    # Format an ip address.
+    #
+    def awesome_ipaddr(ip)
+      colorize(ip.to_s, :ipaddr)
     end
 
     # Format object.methods array.

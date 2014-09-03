@@ -72,6 +72,7 @@ module AwesomePrint
           :fixnum     => :blue,
           :float      => :blue,
           :hash       => :pale,
+          :ipaddr     => :blue,
           :keyword    => :cyan,
           :method     => :purpleish,
           :nilclass   => :red,
